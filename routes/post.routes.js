@@ -25,7 +25,7 @@ postRouter.get("/", async (req, res) => {
     const posts = await postModel.find({ userID: req.body.userID });
     res.send(posts);
   } catch (err) {
-    res.json({ error: err });
+    res.json({ msg: err.message });
   }
 });
 
@@ -33,7 +33,7 @@ postRouter.get("/", async (req, res) => {
 postRouter.get("/top", async (req, res) => {
   try {
   } catch (err) {
-    res.json({ error: err });
+    res.json({ msg: err.message });
   }
 });
 
@@ -71,7 +71,7 @@ postRouter.delete("/delete/:postID", async (req, res) => {
       res.json({ msg: "not authorized." });
     }
   } catch (err) {
-    res.json({ error: err });
+    res.json({ msg: err.message });
   }
 });
 

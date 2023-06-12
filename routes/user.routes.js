@@ -32,7 +32,7 @@ userRouter.post("/register", async (req, res) => {
       });
     }
   } catch (err) {
-    res.json({ msg: err });
+    res.json({ msg: err.message });
   }
 });
 
